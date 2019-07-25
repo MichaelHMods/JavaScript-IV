@@ -8,7 +8,7 @@ class Person {
     };
     //Person's methods
     speak(){
-        return `Hello my name is ${mainAttr.name}, I am from ${mainAttr.location}.`;
+        return `Hello my name is ${this.name}, I am from ${this.location}`;
     };
 };
 
@@ -22,13 +22,13 @@ class Student extends Person {
     };
     //student methods
     listsSubjects(){
-        return `${this.favSubjects}`;//needs forEach
+        console.log(`${this.favSubjects}`);//needs forEach
     };
     prAssignment(studentSubject){
-        return `${this.name} has submitted a PR for ${studentSubject}`;
+        console.log(`${this.name} has submitted a PR for ${studentSubject}`);
     };
     sprintChallenge(sprintSubject) {
-        return `${this.name} has begun sprint challenge on ${this.favSubjects}.`
+        console.log(`${this.name} has begun sprint challenge on ${sprintSubject}.`)
     }
 };
 
@@ -42,10 +42,10 @@ class Instructor extends Person {
     };
     //methods
     demo(subject){
-        `Today we are learning about ${subject}.`;
+       console.log( `Today we are learning about ${subject}.`);
     };
     grade(gradeSubject) {
-        `${mainAttr.name} receives a perfect score on ${gradeSubject}.`
+        console.log(`${this.name} receives a perfect score on ${gradeSubject}.`);
     };
 };
 
@@ -58,12 +58,12 @@ class ProjectManager extends Instructor {
     };
     //methods for PM
     standUp(slackChannel) {
-        `${this.name} announces to ${slackChannel}, @channel standy times!`;
+        console.log(`${this.name} announces to ${slackChannel}, @channel standy times!`);
     };
-    debugsCode(studentName,theSubject) {
-        `${studentName}'s code on ${theSubject}`;
-    }
-}
+    debugsCode(studentName, theSubject) {
+        console.log(`${studentName}'s code on ${theSubject}`);
+    };
+};
 
 //Students
 const studentOne = new Student({
@@ -72,7 +72,7 @@ const studentOne = new Student({
     location: 'Normal',
     previousBackground: 'Poker Dealer',
     className: 'Web22',
-    favSubjects:
+    favSubjects:['pe', 'JS', 'html'],
 });
 
 const studentTwo = new Student({
@@ -81,7 +81,7 @@ const studentTwo = new Student({
     location: 'Rivertonville',
     previousBackground: 'Lobby',
     className: 'Web21',
-    favSubjects:
+    favSubjects:['math', 'science', 'html']
 });
 
 const studentTre = new Student({
@@ -90,7 +90,7 @@ const studentTre = new Student({
     location: 'Cali',
     previousBackground: 'The Man',
     className: 'UX22',
-    favSubjects:
+    favSubjects:['History', 'English', 'writing']
 });
 
 //Instructors
@@ -154,3 +154,9 @@ const pmTre = new ProjectManager({
     gradClassName:'web 20',
     favInstructor: 'Mr.Perfect',
 });
+console.log(studentOne.speak());
+pmTwo.debugsCode('Mike', 'pe');
+pmTre.standUp('theSteveRollinschannel');
+teacherTwo.grade('82');
+teacherOne.demo('HTML');
+
