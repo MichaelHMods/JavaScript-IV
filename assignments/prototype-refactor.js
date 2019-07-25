@@ -41,7 +41,7 @@ Prototype Refactor
         };
         //methods
         takeDamage(){
-            return `${this.name} took damage.`
+            return `${this.name} took damage.`;
         };
     };
 
@@ -54,9 +54,9 @@ Prototype Refactor
         };
         //methods/prototype
         greet(){
-            return `${this.name} offers a greeting in ${this.language}.`
-        }
-      }
+            return `${this.name} offers a greeting in ${this.language}.`;
+        };
+      };
   
     const mage = new Humanoid({
       createdAt: new Date(),
